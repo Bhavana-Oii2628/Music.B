@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Music Player</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body, html {
+            height: 100%;
+            font-family: Arial, sans-serif;
+        }
+
+        .welcome-container {
+            height: 100vh;
+            background-image: url('https://png.pngtree.com/png-clipart/20230927/original/pngtree-color-music-free-illustration-png-image_13161296.png');  
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            text-align: center;
+            color: white;
+            position: relative;
+            padding-top: 50px;
+        }
+
+        .welcome-container::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        /* One line la irukkanum & Top center fix */
+        .welcome-content {
+            position: relative;
+            z-index: 2;
+            margin-top: 20px;
+        }
+
+        .welcome-content h1 {
+            font-size: 2.5rem;
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            white-space: nowrap;
+            z-index: 3;
+
+            /* Glowing Effect */
+            text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 40px #00ffff;
+            animation: glow 1.5s infinite alternate;
+        }
+
+        .welcome-content p {
+            font-size: 1.2rem;
+            margin-top: 80px;
+            z-index: 3;
+        }
+
+        /* Button Bottom la irukkum */
+        .cta-button {
+            background-color: #008080;
+            color: white;
+            padding: 12px 25px;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 3;
+
+            /* Glow Effect */
+            box-shadow: 0 0 10px #00ffff, 0 0 40px #00ffff;
+            transition: 0.4s ease-in-out;
+        }
+
+        /* Hover Effect */
+        .cta-button:hover {
+            background-color: #006666;
+            box-shadow: 0 0 20px #00ffff, 0 0 50px #00ffff, 0 0 80px #00ffff;
+        }
+
+        /* Keyframes for text glowing animation */
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 40px #00ffff;
+            }
+            to {
+                text-shadow: 0 0 20px #00ffff, 0 0 40px #00ffff, 0 0 60px #00ffff;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="welcome-container">
+        <div class="welcome-content">
+            <h1>Welcome to Music Player</h1> <!-- One line la irukkum & Glowing effect -->
+            <p>Your favorite music, just a click away.</p>
+        </div>
+
+        <!-- Button Bottom la center fix -->
+        <button class="cta-button" onclick="startMusic()">Start Listening</button>
+    </div>
+
+    <script>
+        function startMusic() {
+            window.location.href = "main.html";  // Main page ku navigate aagum
+        }
+    </script>
+</body>
+</html>
